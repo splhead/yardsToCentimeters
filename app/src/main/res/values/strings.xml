@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Conversor</string>
+    <string name="title">Jardas para centimetros</string>
+    <string name="button_text">Converter</string>
+    <string name="input_hint_text">Jardas</string>
+    <string name="input_label">Insira o valor em jardas</string>
+    <string name="img_desc">imagem que representa conversão</string>
+</resources>
