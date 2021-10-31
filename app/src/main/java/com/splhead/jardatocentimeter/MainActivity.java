@@ -23,13 +23,7 @@ public class MainActivity extends AppCompatActivity {
             double yards = Double.parseDouble(binding.eTNDJardas.getText().toString());
             double centimeters = Utils.convertJardasToCentimeters(yards);
 
-            String out = Utils.doubleToString(yards) +
-                    " " +
-                    Utils.unity(yards, "jarda") +
-                    " é igual a " +
-                    Utils.doubleToString(centimeters) +
-                    " " +
-                    Utils.unity(centimeters, "centímetro");
+            String out = Utils.out(yards, centimeters);
 
             binding.tvResultInCentimeters.setText(out);
             binding.eTNDJardas.setText("");

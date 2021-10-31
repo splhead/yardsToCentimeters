@@ -7,7 +7,7 @@ import org.junit.Test;
 public class UtilsUnitTest {
 
     @Test
-    public void convertionJardasToCentimeters_isCorrect() {
+    public void conversionYardsToCentimeters_isCorrect() {
         double centimeters = 0;
         double jardas = 1;
 
@@ -21,7 +21,7 @@ public class UtilsUnitTest {
     }
 
     @Test
-    public void shouldBeZeroWhenJardasIsLessThanZero() {
+    public void shouldBeZeroWhenYardsIsLessThanZero() {
         double centimeters;
         double jardas = -22;
 
@@ -31,14 +31,17 @@ public class UtilsUnitTest {
     }
 
     @Test
-    public void shouldRepresentCorrectUnityInSingleOrPlural() {
-        double greaterThanOne = 2;
-        double lessThanOne = 0.99;
+    public void shouldFormatSingleOutCorrectly() {
+        String out = Utils.out(0.01, 0.91);
+        assertEquals(out, "0.01 jarda é igual a 0.91 centímetro");
 
-        assertEquals(Utils.unity(greaterThanOne, "jarda"), "jardas");
-        assertEquals(Utils.unity(lessThanOne, "jarda"), "jarda");
+        out = Utils.out(0.99, 90.52);
+        assertEquals(out, "0.99 jarda é igual a 90.52 centímetros");
+    }
 
-        assertEquals(Utils.unity(greaterThanOne, "centímetro"), "centímetros");
-        assertEquals(Utils.unity(lessThanOne, "centímetro"), "centímetro");
+    @Test
+    public void shouldFormatPluralOutCorrectly() {
+        String out = Utils.out(2.0, 182.88);
+        assertEquals(out, "2.0 jardas são iguais a 182.88 centimetros");
     }
 }
